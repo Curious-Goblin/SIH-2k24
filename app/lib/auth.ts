@@ -3,6 +3,16 @@ import CredentialsProvider from "next-auth/providers/credentials";
 import bcrypt from 'bcrypt';
 import User from "@/db/models/User";
 import connectDB from "@/db";
+import { JWT } from "next-auth/jwt";
+import { Account, Profile } from "next-auth";
+import { AdapterUser } from "next-auth/adapters";
+
+export interface CustomUser {
+    id: string;
+    email?: string | null;
+    name?: string | null;
+    password?: string | null; // Consider removing this from the user object returned
+}
 
 export const authOptions = {
     providers: [
@@ -10,12 +20,12 @@ export const authOptions = {
             clientId: process.env.GOOGLE_CLIENT_ID || "",
             clientSecret: process.env.GOOGLE_CLIENT_SECRET || "",
         }),
-
         CredentialsProvider({
             name: "Credentials",
             credentials: {
                 emailAddress: { label: "Email", type: "text", placeholder: "example@gmail.com" },
                 password: { label: "Password", type: "password" },
+                name: { label: "Name", type: "text", placeholder: "Your Name", optional: true }, // Include name for sign-up
             },
             async authorize(credentials: any, req: any) {
                 await connectDB();
@@ -36,36 +46,41 @@ export const authOptions = {
                         const newUser = new User({
                             email: emailAddress,
                             password: hashedPassword,
-                            name: credentials.name,
+                            name: credentials.name, // Ensure name is taken from credentials
                         });
 
                         await newUser.save();
 
-                        return newUser;
+                        return {
+                            id: newUser.id.toString(),
+                            email: newUser.email,
+                            name: newUser.name,
+                        }; // Return the newly created user
                     } else {
                         const user = await User.findOne({ email: emailAddress });
-                        console.log(user);
                         if (!user) {
                             throw new Error("No user found with this email.");
                         }
-                        if (user.password === null) {
-                            throw new Error("This account was created via google, please login with google")
+                        if (!user.password) {
+                            throw new Error("This account was created via Google, please login with Google.");
                         }
-                        const hashedPassword = await bcrypt.hash(password, 10);
-                        const isPasswordValid = await bcrypt.compare(hashedPassword, user.password);
-                        console.log("user password: " + user.password);
+                        const isPasswordValid = await bcrypt.compare(password, user.password);
                         if (!isPasswordValid) {
                             throw new Error("Invalid password.");
                         }
 
-                        return user;
+                        return {
+                            id: user.id.toString(),
+                            email: user.email,
+                            name: user.name,
+                        }; // Return the authenticated user
                     }
                 } catch (err: any) {
                     console.error("Error occurred during authorization:", err);
-                    throw new Error(err.message);
+                    throw new Error("Authorization failed. Please try again."); // More user-friendly message
                 }
             },
-        })
+        }),
     ],
 
     pages: {
@@ -74,17 +89,17 @@ export const authOptions = {
     },
 
     callbacks: {
-        async signIn({ user, account }) {
+        async signIn({ user, account }: { user: CustomUser | AdapterUser; account: Account | null }) {
             await connectDB();
 
-            if (account.provider === 'google') {
+            if (account?.provider === 'google') {
                 const existingUser = await User.findOne({ email: user.email });
 
                 if (!existingUser) {
                     const newUser = new User({
                         email: user.email,
                         name: user.name || '',
-                        password: null,
+                        password: null, // Password should be null for Google accounts
                     });
 
                     await newUser.save();
@@ -93,15 +108,15 @@ export const authOptions = {
 
             return true;
         },
-        async jwt({ token, user, account, profile }) {
+        async jwt({ token, user }: { token: JWT; user?: CustomUser }) {
             if (user) {
-                token.id = user.id;
+                token.id = user.id; // Save user ID in token
             }
             return token;
         },
-        async session({ session, token }) {
+        async session({ session, token }: { session: any; token: JWT }) {
             if (token) {
-                session.id = token.id;
+                session.id = token.id; // Add custom user ID to session
             }
             return session;
         },
