@@ -1,5 +1,5 @@
-export default function GoogleButton({text}:{text:string}){
+export default function GoogleButton({ text, onClick }: { text: string, onClick: (e: any) => Promise<void> }) {
     return (
-        <button className="rounded-md shadow-md w-full py-3">{text}</button>
+        <button onClick={onClick} className="rounded-md shadow-md w-full py-3">{text}</button>
     )
 }

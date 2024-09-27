@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { useRecoilState } from "recoil";
 import Button from "./button";
@@ -6,10 +6,20 @@ import GoogleButton from "./googleButton";
 import TextArea from "./textArea";
 import { emailAtom, passwordAtom } from "../atoms/userdetails";
 import { signIn } from "next-auth/react";
+import { z } from "zod";
+import { useState } from "react";
+
+const signInSchema = z.object({
+    emailAddress: z.string().email({ message: "Invalid email address" }),
+    password: z.string().min(8, { message: "Password must be at least 8 characters long" }),
+});
 
 export default function SignInComponent() {
-    const [emailState, setEmailState] = useRecoilState(emailAtom)
-    const [passwordState, setPasswordState] = useRecoilState(passwordAtom)
+    const [emailState, setEmailState] = useRecoilState(emailAtom);
+    const [passwordState, setPasswordState] = useRecoilState(passwordAtom);
+    const [errors, setErrors] = useState<{ name?: string, emailAddress?: string, password?: string }>({});
+    const [authError, setAuthError] = useState<string | null>(null);  // To store backend errors
+
     const handleChange = (setState: React.Dispatch<React.SetStateAction<string>>) =>
         (event: React.ChangeEvent<HTMLInputElement>) => {
             setState(event.target.value);
@@ -17,23 +27,45 @@ export default function SignInComponent() {
 
     const handleSubmit = async (e: any) => {
         e.preventDefault();
-        const result = await signIn('credentials', {
+
+        const validationResult = signInSchema.safeParse({
+            emailAddress: emailState,
+            password: passwordState,
+        });
+
+        if (!validationResult.success) {
+            const formattedErrors = validationResult.error.format();
+            setErrors({
+                emailAddress: formattedErrors.emailAddress?._errors[0],
+                password: formattedErrors.password?._errors[0],
+            });
+            return;
+        }
+
+        const result = await signIn("credentials", {
             redirect: false,
             emailAddress: emailState,
-            password: passwordState
+            password: passwordState,
         });
 
         if (result?.error) {
-            console.error(result.error);
+            setAuthError(result.error);
         } else {
             window.location.href = "/";
         }
     };
+
+    const handleGoogleSignIn = async (e: any) => {
+        e.preventDefault();
+        const result = await signIn("google", {
+            redirect: false,
+            callbackUrl: "/",
+        });
+    };
+
     return (
         <div className="w-full">
-            <div className="text-3xl font-bold text-[#654B3E]">
-                Login to your Account
-            </div>
+            <div className="text-3xl font-bold text-[#654B3E]">Login to your Account</div>
             <div className="text-2xl font-extralight text-[#654B3E]">
                 with your registered Email Address
             </div>
@@ -43,21 +75,29 @@ export default function SignInComponent() {
                         label="Email Address*"
                         placeholder="Enter Email Address"
                         type="text"
-                        onChange={handleChange(setEmailState)} />
+                        onChange={handleChange(setEmailState)}
+                    />
+                    {errors.emailAddress && <p className="text-red-500 text-sm pb-4">{errors.emailAddress}</p>}
                     <TextArea
                         label="Enter Password*"
                         placeholder="Password"
                         type="password"
-                        onChange={handleChange(setPasswordState)} />
+                        onChange={handleChange(setPasswordState)}
+                    />
+                    {errors.password && <p className="text-red-500 text-sm pb-4">{errors.password}</p>}
+
                 </div>
             </div>
+
+            {authError && <p className="text-red-500 text-sm pb-4">{authError}</p>}
+
             <Button onClick={handleSubmit} name="Login" />
             <div className="flex items-center pt-5 pb-5">
                 <div className="flex-grow border-t border-gray-300" />
                 <span className="px-4 text-gray-400 text-sm">Or</span>
                 <div className="flex-grow border-t border-gray-300" />
             </div>
-            <GoogleButton text="Login with Google" />
+            <GoogleButton onClick={handleGoogleSignIn} text="Login with Google" />
         </div>
-    )
+    );
 }

@@ -8,20 +8,20 @@ export const authOptions = {
     providers: [
         GoogleProvider({
             clientId: process.env.GOOGLE_CLIENT_ID || "",
-            clientSecret: process.env.GOOGLE_CLIENT_SECRET || ""
+            clientSecret: process.env.GOOGLE_CLIENT_SECRET || "",
         }),
+
         CredentialsProvider({
             name: "Credentials",
             credentials: {
-                emailAddress: { label: "your email", type: "text", placeholder: "example@gmail.com", required: true },
-                password: { label: "your password", type: "password", required: true },
+                emailAddress: { label: "Email", type: "text", placeholder: "example@gmail.com" },
+                password: { label: "Password", type: "password" },
             },
             async authorize(credentials: any, req: any) {
                 await connectDB();
 
                 try {
                     const { emailAddress, password } = credentials;
-
                     const isSignUp = req.body.isSignUp;
 
                     if (isSignUp) {
@@ -36,7 +36,7 @@ export const authOptions = {
                         const newUser = new User({
                             email: emailAddress,
                             password: hashedPassword,
-                            name: credentials.name
+                            name: credentials.name,
                         });
 
                         await newUser.save();
@@ -44,30 +44,68 @@ export const authOptions = {
                         return newUser;
                     } else {
                         const user = await User.findOne({ email: emailAddress });
-
+                        console.log(user);
                         if (!user) {
                             throw new Error("No user found with this email.");
                         }
-
-                        const isPasswordValid = await bcrypt.compare(password, user.password);
-
+                        if (user.password === null) {
+                            throw new Error("This account was created via google, please login with google")
+                        }
+                        const hashedPassword = await bcrypt.hash(password, 10);
+                        const isPasswordValid = await bcrypt.compare(hashedPassword, user.password);
+                        console.log("user password: " + user.password);
                         if (!isPasswordValid) {
                             throw new Error("Invalid password.");
                         }
 
                         return user;
                     }
+                } catch (err: any) {
+                    console.error("Error occurred during authorization:", err);
+                    throw new Error(err.message);
                 }
-                catch (err) {
-                    console.error("error occured", err)
-                    return null;
-                }
-            }
+            },
         })
     ],
+
     pages: {
         signIn: '/auth/signin',
-        signUp: '/auth/signup'
+        signUp: '/auth/signup',
     },
-    secret: process.env.NEXTAUTH_SECRET || "secret"
+
+    callbacks: {
+        async signIn({ user, account }) {
+            await connectDB();
+
+            if (account.provider === 'google') {
+                const existingUser = await User.findOne({ email: user.email });
+
+                if (!existingUser) {
+                    const newUser = new User({
+                        email: user.email,
+                        name: user.name || '',
+                        password: null,
+                    });
+
+                    await newUser.save();
+                }
+            }
+
+            return true;
+        },
+        async jwt({ token, user, account, profile }) {
+            if (user) {
+                token.id = user.id;
+            }
+            return token;
+        },
+        async session({ session, token }) {
+            if (token) {
+                session.id = token.id;
+            }
+            return session;
+        },
+    },
+
+    secret: process.env.NEXTAUTH_SECRET || "secret",
 };
