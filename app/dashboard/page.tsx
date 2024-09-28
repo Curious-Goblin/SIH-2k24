@@ -34,7 +34,7 @@ export default function Dashboard() {
                         </div>
                         <SideBar />
                     </div>
-                    <div>
+                    <div className="pb-10">
                         <Image
                             src="/Support.png"
                             layout="responsive" 
