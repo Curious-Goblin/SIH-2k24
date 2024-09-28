@@ -12,14 +12,14 @@ export default function Dashboard() {
                     <LogoSvgDashboard />
                 </div>
                 <SearchBarComponent />
-                <Button style="rounded-lg bg-[#654B3E] text-white font-bold flex justify-center my-3 py-4 px-9"
-                    name="Let's Learn" />
+                {/* <Button style="rounded-lg bg-[#654B3E] text-white font-bold flex justify-center my-3 py-4 px-9"
+                    name="Let's Learn" /> */}
                 <Profile />
             </div>
             <div style={{ width: '14%' }} className="pl-6">
-                <Button name="Dashboard"
+                {/* <Button name="Dashboard"
                     style="rounded-lg bg-[#654B3E] text-white font-bold flex justify-center my-3 py-4 px-9" />
-                <SideBar />
+                <SideBar /> */}
             </div>
         </div>
     )
