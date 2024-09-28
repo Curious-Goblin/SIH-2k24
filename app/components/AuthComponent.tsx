@@ -3,6 +3,7 @@ import SignInComponent from "./SiginComponent";
 import LoginTextSvg from "../svg/loginTextSvg";
 import LogoSvg from "../svg/logoSvg";
 import SignUpComponent from "./SignupComponent";
+import SignUpTextSvg from "../svg/SignupTextSvg";
 
 export default function AuthComponent({ auth }: { auth: string }) {
     return (
@@ -16,9 +17,16 @@ export default function AuthComponent({ auth }: { auth: string }) {
                     alt="Background"
                     className="object-cover"
                 />
-                <div className="absolute inset-0 flex items-center justify-center z-10">
-                    <LoginTextSvg />
-                </div>
+                {auth === "signup" &&
+                    <div className="absolute inset-0 flex items-center justify-center z-10">
+                        <SignUpTextSvg />
+                    </div>
+                }
+                {auth === "signin" &&
+                    <div className="absolute inset-0 flex items-center justify-center z-10">
+                        <LoginTextSvg />
+                    </div>
+                }
             </div>
 
             <div className="relative flex flex-col justify-center items-center w-1/2">
@@ -30,7 +38,7 @@ export default function AuthComponent({ auth }: { auth: string }) {
                         <SignInComponent />
                     }
                     {auth === 'signup' &&
-                        <SignUpComponent/>
+                        <SignUpComponent />
                     }
                 </div>
             </div>

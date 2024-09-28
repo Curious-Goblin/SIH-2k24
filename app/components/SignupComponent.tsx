@@ -109,7 +109,7 @@ export default function SignUpComponent() {
 
             {authError && <p className="text-red-500 text-sm">{authError}</p>}
 
-            <Button onClick={handleSubmit} name="Sign Up" />
+            <Button style="rounded-md bg-[#654B3E] text-white font-medium flex justify-center py-3" onClick={handleSubmit} name="Sign Up" />
             <div className="flex items-center pt-5 pb-5">
                 <div className="flex-grow border-t border-gray-300" />
                 <span className="px-4 text-gray-400 text-sm">Or</span>
