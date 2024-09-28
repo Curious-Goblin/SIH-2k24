@@ -11,7 +11,7 @@ export interface CustomUser {
     id: string;
     email?: string | null;
     name?: string | null;
-    password?: string | null; // Consider removing this from the user object returned
+    password?: string | null;
 }
 
 export const authOptions = {
@@ -25,7 +25,7 @@ export const authOptions = {
             credentials: {
                 emailAddress: { label: "Email", type: "text", placeholder: "example@gmail.com" },
                 password: { label: "Password", type: "password" },
-                name: { label: "Name", type: "text", placeholder: "Your Name", optional: true }, // Include name for sign-up
+                name: { label: "Name", type: "text", placeholder: "Your Name", optional: true },
             },
             async authorize(credentials: any, req: any) {
                 await connectDB();
@@ -46,7 +46,7 @@ export const authOptions = {
                         const newUser = new User({
                             email: emailAddress,
                             password: hashedPassword,
-                            name: credentials.name, // Ensure name is taken from credentials
+                            name: credentials.name,
                         });
 
                         await newUser.save();
@@ -55,7 +55,7 @@ export const authOptions = {
                             id: newUser.id.toString(),
                             email: newUser.email,
                             name: newUser.name,
-                        }; // Return the newly created user
+                        }; 
                     } else {
                         const user = await User.findOne({ email: emailAddress });
                         if (!user) {
@@ -73,11 +73,11 @@ export const authOptions = {
                             id: user.id.toString(),
                             email: user.email,
                             name: user.name,
-                        }; // Return the authenticated user
+                        };
                     }
                 } catch (err: any) {
                     console.error("Error occurred during authorization:", err);
-                    throw new Error("Authorization failed. Please try again."); // More user-friendly message
+                    throw new Error("Authorization failed. Please try again."); 
                 }
             },
         }),
@@ -99,7 +99,7 @@ export const authOptions = {
                     const newUser = new User({
                         email: user.email,
                         name: user.name || '',
-                        password: null, // Password should be null for Google accounts
+                        password: null,
                     });
 
                     await newUser.save();
