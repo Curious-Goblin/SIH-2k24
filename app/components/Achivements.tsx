@@ -1,3 +1,5 @@
+"use client"
+import { useRouter } from "next/navigation";
 import Comeback from "../svg/ComebackSvg"
 import Lucky from "../svg/LuckySvg"
 import Winner from "../svg/WinnerSvg"
@@ -18,13 +20,17 @@ const Achievments = [
 ]
 
 export default function AchievmentComponent() {
+    const router = useRouter();
+    const handleNavigation = () => {
+        router.push("/error")
+    }
     return (
         <div className="mt-8">
             <div className="flex justify-between items-center">
                 <div className="font-bold text-[#654B3E] text-xl ">
                     Achievments
                 </div>
-                <div className="font-light text-[#654B3E]">
+                <div onClick={handleNavigation} className="font-light cursor-pointer text-[#654B3E]">
                     View all
                 </div>
             </div>
@@ -32,7 +38,8 @@ export default function AchievmentComponent() {
                 {Achievments.map((achievment, index) => (
                     <div
                         key={index}
-                        className="flex flex-col gap-6 pt-8"
+                        onClick={handleNavigation}
+                        className="flex flex-col cursor-pointer gap-6 pt-8"
                     >
                         <div className="w-20 h-20">
                             {achievment.svg}

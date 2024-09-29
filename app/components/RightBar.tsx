@@ -4,7 +4,7 @@ import ReminderComponent from "./ReminderComonent";
 
 export default function RightBar(){
     return (
-        <div className="w-full h-full flex-grow p-8 rounded-md shadow-xl">
+        <div className="flex-grow p-8 rounded-md shadow-xl" style={{width:"15%"}}>
            <OtherUsers/>
            <AchievmentComponent/>
            <ReminderComponent/>

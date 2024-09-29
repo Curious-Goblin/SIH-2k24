@@ -1,3 +1,5 @@
+"use client"
+import { useRouter } from "next/navigation";
 import Button from "./button";
 
 const UserDetails = ["sourabh", "aryan", "sanket", "pranav", "rohit", "nishikant"];
@@ -10,6 +12,10 @@ function getRandomLightColor() {
 }
 
 export default function OtherUsers() {
+    const router = useRouter();
+    const handleNavigation = () => {
+        router.push("/error")
+    }
     return (
         <div className="">
             <div className="text-[#654B3E] text-lg font-bold mb-4">
@@ -19,7 +25,8 @@ export default function OtherUsers() {
                 {UserDetails.map((user, index) => (
                     <div
                         key={index}
-                        className="flex items-center justify-center w-16 h-16 rounded-full text-white text-2xl font-semibold"
+                        onClick={handleNavigation}
+                        className="flex items-center justify-center cursor-pointer w-16 h-16 rounded-full text-white text-2xl font-semibold"
                         style={{ backgroundColor: getRandomLightColor() }}
                     >
                         {user[0].toUpperCase()}
@@ -27,10 +34,11 @@ export default function OtherUsers() {
                 ))}
             </div>
             <div className="flex justify-center">
-            <Button
-                name="Combat"
-                style="border-2 border-red-900 inline-flex justify-center text-xl mt-7 py-3 px-12 font-medium text-[#654B3E] rounded-md"
-            />
+                <Button
+                    onClick={handleNavigation}
+                    name="Combat"
+                    style="border-2 border-red-900 inline-flex justify-center text-xl mt-7 py-3 px-12 font-medium text-[#654B3E] rounded-md"
+                />
             </div>
         </div>
     );

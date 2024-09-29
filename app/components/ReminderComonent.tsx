@@ -1,3 +1,5 @@
+"use client"
+import { useRouter } from "next/navigation";
 import Reminder1 from "../svg/ReminderSvg1"
 import Reminder2 from "../svg/ReminderSvg2"
 import Reminder3 from "../svg/ReminderSvg3"
@@ -22,6 +24,10 @@ const Reminders = [
 
 
 export default function ReminderComponent() {
+    const router = useRouter();
+    const handleNavigation = () => {
+        router.push("/error")
+    }
     return (
         <div className="mt-8">
             <div className="font-bold text-[#654B3E] text-xl mb-10">
@@ -31,7 +37,8 @@ export default function ReminderComponent() {
                 {Reminders.map((reminder, index) => (
                     <div
                         key={index}
-                        className="flex items-center gap-5 pb-5">
+                        onClick={handleNavigation}
+                        className="flex items-center cursor-pointer gap-5 pb-5">
                         <div className="w-14 h-14">{reminder.svg}</div>
                         <div>
                             <div>{reminder.name}</div>
