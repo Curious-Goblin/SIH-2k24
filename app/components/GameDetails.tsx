@@ -73,13 +73,13 @@ export default function GameDetails() {
                         {currentDate}
                     </div>
                     <div>
-                        {gameDetails.timeLimit}
+                        {gameDetails?.timeLimit}
                     </div>
                     <div>
-                        {gameDetails.attempts}
+                        {gameDetails?.attempts}
                     </div>
                     <div>
-                        {gameDetails.passingPoints} Points
+                        {gameDetails?.passingPoints} Points
                     </div>
                 </div>
             </div>
