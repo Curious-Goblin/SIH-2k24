@@ -53,32 +53,6 @@
   },
   {
     "_id": {
-      "$oid": "66ec1d215639eea65b755603"
-    },
-    "game_name": "hangman",
-    "question": "The _ has the authority to settle disputes between the central government and state governments, as well as between states, ensuring the supremacy of the Constitution.",
-    "options": [
-      "High Court",
-      " District Court",
-      "Supreme Court",
-      "Family Court",
-      "Session Court",
-      "Administrative Tribunal",
-      "Consumer Forum",
-      "Lok Adalat"
-    ],
-    "answers": [
-      "Supreme Court"
-    ],
-    "difficulty": "easy",
-    "articleReferences": [
-      131
-    ],
-    "institution": "judiciary",
-    "__v": 0
-  },
-  {
-    "_id": {
       "$oid": "66ec1e6b5639eea65b755605"
     },
     "game_name": "hangman",
@@ -125,33 +99,6 @@
     "difficulty": "hard",
     "articleReferences": [
       136
-    ],
-    "institution": "judiciary",
-    "__v": 0
-  },
-  {
-    "_id": {
-      "$oid": "66ec23ed5639eea65b755609"
-    },
-    "game_name": "hangman",
-    "question": "The President of India can remove a judge of the High Court on the grounds of _ and _ behavior following a prescribed process.",
-    "options": [
-      "misbehavior",
-      "misconduct",
-      "incapacity",
-      "incompetence",
-      "breach of duty",
-      "inefficiency",
-      "breach of conduct",
-      "violation of duty"
-    ],
-    "answers": [
-      "misbehavior",
-      "incapacity"
-    ],
-    "difficulty": "hard",
-    "articleReferences": [
-      217
     ],
     "institution": "judiciary",
     "__v": 0
@@ -320,88 +267,6 @@
   },
   {
     "_id": {
-      "$oid": "66ec320d5639eea65b755617"
-    },
-    "game_name": "hangman",
-    "question": "The Vice-President of India is the ex-officio Chairman of the _, and he/she is elected by an electoral college consisting of members of _.",
-    "options": [
-      "Lok Sabha",
-      "both Houses of Parliament",
-      "Rajya Sabha",
-      "Cabinet",
-      "Legislative Assemblies",
-      "Legislative Council",
-      "Parliament",
-      "Council of Ministers"
-    ],
-    "answers": [
-      "Rajya Sabha",
-      "both Houses of Parliament"
-    ],
-    "difficulty": "medium",
-    "articleReferences": [
-      64,
-      66
-    ],
-    "institution": "executive",
-    "__v": 0
-  },
-  {
-    "_id": {
-      "$oid": "66ec33485639eea65b755619"
-    },
-    "game_name": "hangman",
-    "question": "The Prime Minister is appointed by the _, and the other Ministers are appointed by the _ on the advice of the Prime Minister.",
-    "options": [
-      "Prime Minister",
-      "Parliament",
-      "Vice-President",
-      "President",
-      "Speaker",
-      "Legislative Council",
-      "Cabinet",
-      "Council of Ministers"
-    ],
-    "answers": [
-      "President",
-      "President"
-    ],
-    "difficulty": "easy",
-    "articleReferences": [
-      75
-    ],
-    "institution": "executive",
-    "__v": 0
-  },
-  {
-    "_id": {
-      "$oid": "66ec342e5639eea65b75561b"
-    },
-    "game_name": "hangman",
-    "question": "The President can proclaim President’s Rule in a state under Article _ if the _ fails to function according to the provisions of the Constitution.",
-    "options": [
-      "352",
-      "Parliament",
-      "state government",
-      "central government",
-      "judiciary",
-      "365",
-      "Cabinet",
-      "356"
-    ],
-    "answers": [
-      "356",
-      "state government"
-    ],
-    "difficulty": "easy",
-    "articleReferences": [
-      356
-    ],
-    "institution": "executive",
-    "__v": 0
-  },
-  {
-    "_id": {
       "$oid": "66ec351a5639eea65b75561d"
     },
     "game_name": "hangman",
@@ -423,33 +288,6 @@
     "difficulty": "hard",
     "articleReferences": [
       76
-    ],
-    "institution": "executive",
-    "__v": 0
-  },
-  {
-    "_id": {
-      "$oid": "66ec373e5639eea65b75561f"
-    },
-    "game_name": "hangman",
-    "question": "The Prime Minister can recommend the dissolution of the _, and the President can act on this recommendation under Article _.",
-    "options": [
-      "Rajya Sabha",
-      "Parliament",
-      "Lok Sabha",
-      "State Legislature",
-      "87",
-      "85",
-      "56",
-      "58"
-    ],
-    "answers": [
-      "Lok Sabha",
-      "85"
-    ],
-    "difficulty": "medium",
-    "articleReferences": [
-      85
     ],
     "institution": "executive",
     "__v": 0
@@ -796,34 +634,6 @@
     "articleReferences": [
       356,
       352
-    ],
-    "institution": "executive",
-    "__v": 0
-  },
-  {
-    "_id": {
-      "$oid": "66ec7a6994768f5dd5fc6b8c"
-    },
-    "game_name": "hangman",
-    "question": "The _ administers the oath of office to the President of India, while the _ administers the oath of office to the Governor of a state.",
-    "options": [
-      "Chief Justice of India",
-      "Prime Minister",
-      "Vice President",
-      "Speaker",
-      "President",
-      "Chief Justice of High Court",
-      "Attorney General",
-      "Home Minister"
-    ],
-    "answers": [
-      "Chief Justice of India",
-      "Chief Justice of High Court"
-    ],
-    "difficulty": "medium",
-    "articleReferences": [
-      60,
-      159
     ],
     "institution": "executive",
     "__v": 0
