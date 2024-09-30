@@ -8,6 +8,7 @@ import { emailAtom, passwordAtom } from "../atoms/userdetails";
 import { signIn } from "next-auth/react";
 import { z } from "zod";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 const signInSchema = z.object({
     emailAddress: z.string().email({ message: "Invalid email address" }),
@@ -18,8 +19,12 @@ export default function SignInComponent() {
     const [emailState, setEmailState] = useRecoilState(emailAtom);
     const [passwordState, setPasswordState] = useRecoilState(passwordAtom);
     const [errors, setErrors] = useState<{ name?: string, emailAddress?: string, password?: string }>({});
-    const [authError, setAuthError] = useState<string | null>(null);  // To store backend errors
+    const [authError, setAuthError] = useState<string | null>(null); 
+    const router=useRouter()
 
+    const handleNavigation=()=>{
+        router.push('/auth/signup')
+    }
     const handleChange = (setState: React.Dispatch<React.SetStateAction<string>>) =>
         (event: React.ChangeEvent<HTMLInputElement>) => {
             setState(event.target.value);
@@ -98,6 +103,9 @@ export default function SignInComponent() {
                 <div className="flex-grow border-t border-gray-300" />
             </div>
             <GoogleButton onClick={handleGoogleSignIn} text="Login with Google" />
+            <div onClick={handleNavigation} className="text-md underline cursor-pointer text-[#654B3E] font-semibold flex justify-center pt-8">
+                Don't have an account? Signup
+            </div>
         </div>
     );
 }
