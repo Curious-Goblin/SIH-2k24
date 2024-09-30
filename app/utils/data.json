@@ -1,0 +1,858 @@
+[{
+    "_id": {
+      "$oid": "66ec12262fb9ce54178747f7"
+    },
+    "game_name": "hangman",
+    "question": "The _ appoints the _ of the Supreme Court under Part V of the Constitution.",
+    "options": [
+      "President",
+      "Governor",
+      "Prime Minister",
+      "Chief Justice",
+      "MLA",
+      "MP",
+      "Administrator officers",
+      "Cabinet Ministers"
+    ],
+    "answers": [
+      "President",
+      "Chief Justice"
+    ],
+    "difficulty": "medium",
+    "articleReferences": [
+      124
+    ],
+    "institution": "judiciary",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "66ec180d2fb9ce54178747fa"
+    },
+    "game_name": "hangman",
+    "question": "The Supreme Court has the power to issue _ for the enforcement of fundamental rights.",
+    "options": [
+      "Notices",
+      "Proclamations",
+      "Writs",
+      "Decrees",
+      "Appeals",
+      "Mandates",
+      "Rules",
+      "Regulations"
+    ],
+    "answers": [
+      "Writs"
+    ],
+    "difficulty": "medium",
+    "articleReferences": [
+      32
+    ],
+    "institution": "judiciary",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "66ec1d215639eea65b755603"
+    },
+    "game_name": "hangman",
+    "question": "The _ has the authority to settle disputes between the central government and state governments, as well as between states, ensuring the supremacy of the Constitution.",
+    "options": [
+      "High Court",
+      " District Court",
+      "Supreme Court",
+      "Family Court",
+      "Session Court",
+      "Administrative Tribunal",
+      "Consumer Forum",
+      "Lok Adalat"
+    ],
+    "answers": [
+      "Supreme Court"
+    ],
+    "difficulty": "easy",
+    "articleReferences": [
+      131
+    ],
+    "institution": "judiciary",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "66ec1e6b5639eea65b755605"
+    },
+    "game_name": "hangman",
+    "question": "The power to appoint judges to the Supreme Court lies with the _.",
+    "options": [
+      "President",
+      "Prime Minister",
+      "Chief Justice",
+      "Parliament",
+      "State Governors",
+      "Cabinet",
+      "Electoral College",
+      "Judiciary"
+    ],
+    "answers": [
+      "President"
+    ],
+    "difficulty": "easy",
+    "articleReferences": [
+      124
+    ],
+    "institution": "judiciary",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "66ec1fd05639eea65b755607"
+    },
+    "game_name": "hangman",
+    "question": "The power to grant special leave to appeal to the Supreme Court is conferred by _.",
+    "options": [
+      "Article 136",
+      "Article 32",
+      "Article 226",
+      "Article 245",
+      "Article 249",
+      "Article 250",
+      "Article 251",
+      "Article 252"
+    ],
+    "answers": [
+      "Article 136"
+    ],
+    "difficulty": "hard",
+    "articleReferences": [
+      136
+    ],
+    "institution": "judiciary",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "66ec23ed5639eea65b755609"
+    },
+    "game_name": "hangman",
+    "question": "The President of India can remove a judge of the High Court on the grounds of _ and _ behavior following a prescribed process.",
+    "options": [
+      "misbehavior",
+      "misconduct",
+      "incapacity",
+      "incompetence",
+      "breach of duty",
+      "inefficiency",
+      "breach of conduct",
+      "violation of duty"
+    ],
+    "answers": [
+      "misbehavior",
+      "incapacity"
+    ],
+    "difficulty": "hard",
+    "articleReferences": [
+      217
+    ],
+    "institution": "judiciary",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "66ec26ec5639eea65b75560b"
+    },
+    "game_name": "hangman",
+    "question": "The minimum age for a judge of the Supreme Court is _, and their retirement age is _.",
+    "options": [
+      "45",
+      "40",
+      "65",
+      "50",
+      "70",
+      "No minimum age",
+      "30",
+      "42"
+    ],
+    "answers": [
+      "No minimum age",
+      "65"
+    ],
+    "difficulty": "easy",
+    "articleReferences": [
+      124
+    ],
+    "institution": "judiciary",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "66ec28b75639eea65b75560d"
+    },
+    "game_name": "hangman",
+    "question": "Judges of the Supreme Court are appointed by the _ after consultation with _.",
+    "options": [
+      "Prime Minister",
+      "Chief Justice of India",
+      "the Attorney General",
+      "President",
+      "Cabinet",
+      "the Council of Ministers",
+      "Vice President",
+      "Parliament"
+    ],
+    "answers": [
+      "President",
+      "Chief Justice of India"
+    ],
+    "difficulty": "medium",
+    "articleReferences": [
+      124
+    ],
+    "institution": "judiciary",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "66ec2be35639eea65b75560f"
+    },
+    "game_name": "hangman",
+    "question": "The Supreme Court has the power to issue writs under Article _ for the enforcement of _.",
+    "options": [
+      "fundamental rights",
+      "124",
+      "legal rights",
+      "statutory rights",
+      "32",
+      "136",
+      "privileges",
+      "131"
+    ],
+    "answers": [
+      "32",
+      "fundamental rights"
+    ],
+    "difficulty": "medium",
+    "articleReferences": [
+      32
+    ],
+    "institution": "judiciary",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "66ec2d0f5639eea65b755611"
+    },
+    "game_name": "hangman",
+    "question": "A retired judge of the Supreme Court can only act as a judge in _ cases, if _ by the Chief Justice of India.",
+    "options": [
+      "Appeal",
+      "Election",
+      "Criminal",
+      "Special",
+      "authorized",
+      "nominated",
+      "specific",
+      "requested"
+    ],
+    "answers": [
+      "specific",
+      "requested"
+    ],
+    "difficulty": "medium",
+    "articleReferences": [
+      128
+    ],
+    "institution": "judiciary",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "66ec2de55639eea65b755613"
+    },
+    "game_name": "hangman",
+    "question": "The President may seek advice from the Supreme Court on matters of _ or _.",
+    "options": [
+      "Foreign relations",
+      "governance",
+      "law",
+      "foreign policy",
+      "Economy",
+      "defense",
+      "Public importance",
+      "administration"
+    ],
+    "answers": [
+      "Public importance",
+      "law"
+    ],
+    "difficulty": "medium",
+    "articleReferences": [
+      143
+    ],
+    "institution": "judiciary",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "66ec2f4c5639eea65b755615"
+    },
+    "game_name": "hangman",
+    "question": "The executive power of the Union is vested in the _, and exercised by the _ in accordance with the Constitution.",
+    "options": [
+      "Prime Minister",
+      "Parliament",
+      "President",
+      "Council of Ministers",
+      "Vice President",
+      "Council of Ministers",
+      "Speaker",
+      "Judiciary"
+    ],
+    "answers": [
+      "President",
+      "Council of Ministers"
+    ],
+    "difficulty": "medium",
+    "articleReferences": [
+      53
+    ],
+    "institution": "executive",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "66ec320d5639eea65b755617"
+    },
+    "game_name": "hangman",
+    "question": "The Vice-President of India is the ex-officio Chairman of the _, and he/she is elected by an electoral college consisting of members of _.",
+    "options": [
+      "Lok Sabha",
+      "both Houses of Parliament",
+      "Rajya Sabha",
+      "Cabinet",
+      "Legislative Assemblies",
+      "Legislative Council",
+      "Parliament",
+      "Council of Ministers"
+    ],
+    "answers": [
+      "Rajya Sabha",
+      "both Houses of Parliament"
+    ],
+    "difficulty": "medium",
+    "articleReferences": [
+      64,
+      66
+    ],
+    "institution": "executive",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "66ec33485639eea65b755619"
+    },
+    "game_name": "hangman",
+    "question": "The Prime Minister is appointed by the _, and the other Ministers are appointed by the _ on the advice of the Prime Minister.",
+    "options": [
+      "Prime Minister",
+      "Parliament",
+      "Vice-President",
+      "President",
+      "Speaker",
+      "Legislative Council",
+      "Cabinet",
+      "Council of Ministers"
+    ],
+    "answers": [
+      "President",
+      "President"
+    ],
+    "difficulty": "easy",
+    "articleReferences": [
+      75
+    ],
+    "institution": "executive",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "66ec342e5639eea65b75561b"
+    },
+    "game_name": "hangman",
+    "question": "The President can proclaim President’s Rule in a state under Article _ if the _ fails to function according to the provisions of the Constitution.",
+    "options": [
+      "352",
+      "Parliament",
+      "state government",
+      "central government",
+      "judiciary",
+      "365",
+      "Cabinet",
+      "356"
+    ],
+    "answers": [
+      "356",
+      "state government"
+    ],
+    "difficulty": "easy",
+    "articleReferences": [
+      356
+    ],
+    "institution": "executive",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "66ec351a5639eea65b75561d"
+    },
+    "game_name": "hangman",
+    "question": "The Attorney General of India is appointed by the _ and must be qualified to be appointed as a _.",
+    "options": [
+      "Prime Minister",
+      "Parliament",
+      "High Court judge",
+      "Supreme Court judge",
+      "President",
+      "Speaker",
+      "Cabinet",
+      "Attorney General"
+    ],
+    "answers": [
+      "President",
+      "Supreme Court judge"
+    ],
+    "difficulty": "hard",
+    "articleReferences": [
+      76
+    ],
+    "institution": "executive",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "66ec373e5639eea65b75561f"
+    },
+    "game_name": "hangman",
+    "question": "The Prime Minister can recommend the dissolution of the _, and the President can act on this recommendation under Article _.",
+    "options": [
+      "Rajya Sabha",
+      "Parliament",
+      "Lok Sabha",
+      "State Legislature",
+      "87",
+      "85",
+      "56",
+      "58"
+    ],
+    "answers": [
+      "Lok Sabha",
+      "85"
+    ],
+    "difficulty": "medium",
+    "articleReferences": [
+      85
+    ],
+    "institution": "executive",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "66ec49fa94768f5dd5fc6b5a"
+    },
+    "game_name": "hangman",
+    "question": " The law-making body of the Union Government is known as the _.",
+    "options": [
+      "Parliament",
+      "Judiciary",
+      "Lok Sabha",
+      "Panchayat",
+      "High Court",
+      "Council of Ministers",
+      "Legislative Assembly",
+      "Executive"
+    ],
+    "answers": [
+      "Parliament"
+    ],
+    "difficulty": "easy",
+    "articleReferences": [
+      79
+    ],
+    "institution": "legislature",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "66ec52bd94768f5dd5fc6b60"
+    },
+    "game_name": "hangman",
+    "question": "  The upper house of Parliament is known as _.",
+    "options": [
+      "Rajya Sabha",
+      "Lok Sabha",
+      "Panchayat",
+      "Vidhan Sabha",
+      "Supreme Court",
+      "Legislative Assembly",
+      "High Court",
+      "Municipal Council"
+    ],
+    "answers": [
+      "Rajya Sabha"
+    ],
+    "difficulty": "easy",
+    "articleReferences": [
+      79
+    ],
+    "institution": "legislature",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "66ec595b94768f5dd5fc6b65"
+    },
+    "game_name": "hangman",
+    "question": "The _ has the power to summon a _ of Parliament.",
+    "options": [
+      "President"," Session",
+      "Speaker"," Committee",
+      "Governor"," State Assembly",
+      "Prime Minister", "Meeting",
+      "Judiciary"," Hearing",
+      "Chief Justice", "Emergency Session",
+      "Vice President", "Rajya Sabha",
+      " Attorney General", "Session"
+    ],
+    "answers": [
+      "President",
+      "Session"
+    ],
+    "difficulty": "hard",
+    "articleReferences": [
+      85
+    ],
+    "institution": "legislature",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "66ec5e7d94768f5dd5fc6b67"
+    },
+    "game_name": "hangman",
+    "question": "The term of the Lok Sabha is generally _ years, but it can be extended during a _.",
+    "options": [
+      "5",
+      "National Emergency",
+      "6",
+      "Presidential Rule",
+      "4",
+      "Financial Crisis",
+      "3",
+      "Special Session"
+    ],
+    "answers": [
+      "5",
+      "National Emergency"
+    ],
+    "difficulty": "hard",
+    "articleReferences": [
+      83
+    ],
+    "institution": "legislature",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "66ec5fae94768f5dd5fc6b6a"
+    },
+    "game_name": "hangman",
+    "question": "The Vice President of India is the ex-officio Chairman of the _.",
+    "options": [
+      "Rajya Sabha",
+      "Lok Sabha",
+      "Supreme Court",
+      "High Court",
+      "Council of Ministers",
+      "Panchayat",
+      "Legislative Council",
+      "Vidhan Sabha"
+    ],
+    "answers": [
+      "Rajya Sabha"
+    ],
+    "difficulty": "medium",
+    "articleReferences": [
+      64
+    ],
+    "institution": "legislature",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "66ec61b594768f5dd5fc6b6c"
+    },
+    "game_name": "hangman",
+    "question": "A joint session of both Houses of Parliament is presided over by the _.",
+    "options": [
+      "Speaker of Lok Sabha",
+      "Chairman of Rajya Sabha",
+      "Prime Minister",
+      "President",
+      "Vice President",
+      "Attorney General",
+      " Chief Justice",
+      "Cabinet Minister"
+    ],
+    "answers": [
+      "Speaker of Lok Sabha"
+    ],
+    "difficulty": "medium",
+    "articleReferences": [
+      118
+    ],
+    "institution": "legislature",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "66ec652794768f5dd5fc6b74"
+    },
+    "game_name": "hangman",
+    "question": " The Rajya Sabha cannot have more than _members.",
+    "options": [
+      "250",
+      "200",
+      "150",
+      "300",
+      "225",
+      "275",
+      "270",
+      "220"
+    ],
+    "answers": [
+      "250"
+    ],
+    "difficulty": "medium",
+    "articleReferences": [
+      80
+    ],
+    "institution": "legislature",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "66ec6ada94768f5dd5fc6b7a"
+    },
+    "game_name": "hangman",
+    "question": " A bill that is introduced in the Rajya Sabha is known as a _ bill",
+    "options": [
+      "Private Member’s",
+      "Money",
+      "Public",
+      "Government",
+      "Finance",
+      "Legislative",
+      "Constitutional",
+      "National"
+    ],
+    "answers": [
+      "Government"
+    ],
+    "difficulty": "hard",
+    "articleReferences": [
+      110
+    ],
+    "institution": "legislature",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "66ec6dd294768f5dd5fc6b80"
+    },
+    "game_name": "hangman",
+    "question": "The Council of Ministers is collectively responsible to the _",
+    "options": [
+      "President",
+      "Prime Minister",
+      "Rajya Sabha",
+      "Chief Justice",
+      "Lok Sabha",
+      "High Court",
+      "Governor",
+      "Finance Commission"
+    ],
+    "answers": [
+      "Lok Sabha"
+    ],
+    "difficulty": "hard",
+    "articleReferences": [
+      75
+    ],
+    "institution": "legislature",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "66ec725094768f5dd5fc6b84"
+    },
+    "game_name": "hangman",
+    "question": "The President can promulgate ordinances only when the _ is not in session",
+    "options": [
+      "Lok Sabha",
+      "Rajya Sabha",
+      "Supreme Court",
+      "Parliament",
+      "Cabinet",
+      "Governor",
+      "Judiciary",
+      "State Legislature"
+    ],
+    "answers": [
+      "Parliament"
+    ],
+    "difficulty": "hard",
+    "articleReferences": [
+      123
+    ],
+    "institution": "legislature",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "66ec740694768f5dd5fc6b86"
+    },
+    "game_name": "hangman",
+    "question": "The _ has the power to dissolve the Lok Sabha, while the _ acts as the presiding officer of the Rajya Sabha",
+    "options": [
+      "President",
+      "Prime Minister",
+      "Vice President",
+      "Chief Justice",
+      "Governor",
+      "Speaker",
+      "Defence Minister",
+      "Deputy Chairman"
+    ],
+    "answers": [
+      "President",
+      "Vice President"
+    ],
+    "difficulty": "medium",
+    "articleReferences": [
+      85,
+      64
+    ],
+    "institution": "executive",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "66ec751994768f5dd5fc6b88"
+    },
+    "game_name": "hangman",
+    "question": "The _ can declare a financial emergency, and the _ advises the President on legal disputes between states.",
+    "options": [
+      "President",
+      "Prime Minister",
+      "Attorney General",
+      "Vice President",
+      "Chief Justice of India",
+      "Speaker",
+      "Finance Minister",
+      "Solicitor General"
+    ],
+    "answers": [
+      "President",
+      "Attorney General"
+    ],
+    "difficulty": "medium",
+    "articleReferences": [
+      360,
+      76
+    ],
+    "institution": "executive",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "66ec770094768f5dd5fc6b8a"
+    },
+    "game_name": "hangman",
+    "question": "The _ can impose President's Rule in a state, while the _ advises on the declaration of a national emergency.",
+    "options": [
+      "Chief Justice",
+      "President",
+      "Prime Minister",
+      "Governor",
+      "Council of Ministers",
+      "Attorney General",
+      "Vice President",
+      "Speaker"
+    ],
+    "answers": [
+      "President",
+      "Council of Ministers"
+    ],
+    "difficulty": "medium",
+    "articleReferences": [
+      356,
+      352
+    ],
+    "institution": "executive",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "66ec7a6994768f5dd5fc6b8c"
+    },
+    "game_name": "hangman",
+    "question": "The _ administers the oath of office to the President of India, while the _ administers the oath of office to the Governor of a state.",
+    "options": [
+      "Chief Justice of India",
+      "Prime Minister",
+      "Vice President",
+      "Speaker",
+      "President",
+      "Chief Justice of High Court",
+      "Attorney General",
+      "Home Minister"
+    ],
+    "answers": [
+      "Chief Justice of India",
+      "Chief Justice of High Court"
+    ],
+    "difficulty": "medium",
+    "articleReferences": [
+      60,
+      159
+    ],
+    "institution": "executive",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "66ec7bf294768f5dd5fc6b8e"
+    },
+    "game_name": "hangman",
+    "question": "The _ advises the President on legal matters, while the _ is the head of the Union Judiciary.",
+    "options": [
+      "Prime Minister",
+      "Attorney General",
+      "Chief Justice of India",
+      "Vice President",
+      "Law Minister",
+      "Solicitor General",
+      "Home Minister",
+      "Finance Minister"
+    ],
+    "answers": [
+      "Attorney General",
+      "Chief Justice of India"
+    ],
+    "difficulty": "medium",
+    "articleReferences": [
+      76,
+      124
+    ],
+    "institution": "executive",
+    "__v": 0
+  }]

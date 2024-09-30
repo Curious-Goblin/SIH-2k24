@@ -2,9 +2,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { useRecoilState } from "recoil";
 import { useRouter } from 'next/navigation';
-import questions from "../utils/questionsList.json";
-import options from "../utils/optionsList.json";
-import answers from "../utils/answerList.json";
+import data from "../utils/data.json";
 import { Keyboard } from "./Keyboard";
 import { HangmanQuestion } from "./HangmanQuestion";
 import { HangmanDrawing } from "./HangmanDrawing";
@@ -18,6 +16,18 @@ interface Props {
     setIncorrectGuesses: (incorrectGuesses: number) => void;
 }
 
+function getQuestionDetails() {
+    const questionData = data[Math.floor(Math.random()*(data.length))];
+
+    if (questionData) {
+        return {
+            question: questionData.question,
+            answers: questionData.answers,
+            options: questionData.options
+        };
+    } else {
+        return { question: "Question not found.", answers: [], options: [] };    }
+}
 const SubmitAnswer: React.FC<Props> = ({ guessedOptions, answers, setIsWinner, incorrectGuesses, setIncorrectGuesses }) => {
     const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
         const sortedAnswers = answers.map(answer => answer.toLowerCase()).slice().sort();
@@ -40,18 +50,16 @@ const SubmitAnswer: React.FC<Props> = ({ guessedOptions, answers, setIsWinner, i
     );
 };
 
-function getQuestion() {
-    return questions[Math.floor(Math.random() * questions.length)];
-}
-
 function HangmanGame() {
-    const [questionToGuess, setQuestionToGuess] = useState(getQuestion);
+    const [questionDetails, setQuestionDetails] = useState(getQuestionDetails);
+    const [questionToGuess, setQuestionToGuess] = useState(questionDetails.question);
     const [guessedOptions, setGuessedOptions] = useRecoilState(guessedOptionsState);
-    const [Options, setOptions] = useState<string[]>(options);
+    const [Options, setOptions] = useState<string[]>(questionDetails.options);
+    const [answers, setAnswers] = useState<string[]>(questionDetails.answers);
     const [isWinner, setIsWinner] = useState<boolean>(false);
     const [isLoser, setIsLoser] = useState<boolean>(false);
     const [incorrectGuesses, setIncorrectGuesses] = useState<number>(0);
-    const router = useRouter(); // Initialize router for navigation
+    const router = useRouter();
 
     const addGuessedOption = useCallback(
         (option: string) => {
@@ -80,7 +88,7 @@ function HangmanGame() {
     const resetGame = () => {
         setGuessedOptions([]);
         setIncorrectGuesses(0);
-        setQuestionToGuess(getQuestion());
+        setQuestionToGuess(questionDetails.question);
         setIsWinner(false);
         setIsLoser(false);
     };
