@@ -1,6 +1,7 @@
 import { useRecoilState } from "recoil";
 import { GameNameAtom } from "../atoms/gamedetails";
 import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 import Button from "./button";
 
 const GamesDetails = [
@@ -51,6 +52,8 @@ function getCurrentDateFormatted() {
 export default function GameDetails() {
     const [gameName, setGameName] = useRecoilState(GameNameAtom);
     const currentDate = getCurrentDateFormatted();
+    const router = useRouter();
+
     useEffect(() => {
         const storedGameName = localStorage.getItem('gameName');
         if (storedGameName) {
@@ -59,9 +62,16 @@ export default function GameDetails() {
     }, [setGameName]);
 
     const gameDetails = GamesDetails.find((game) => game.gameName === gameName);
+
+    const handleStartGameClick = () => {
+        if (gameName === "The Constitutional Hangman") {
+            router.push("/hangmanGame");
+        }
+    };
+
     return (
-        <div className="flex flex-col gap-10 mt-10 ml-5" >
-            <div className="flex gap-10 text-[#696F79] text-lg ">
+        <div className="flex flex-col gap-10 mt-10 ml-5">
+            <div className="flex gap-10 text-[#696F79] text-lg">
                 <div className="flex flex-col gap-6 font-extrabold">
                     <div className="font-semibold">Date:</div>
                     <div className="font-semibold">Time Limit:</div>
@@ -69,23 +79,22 @@ export default function GameDetails() {
                     <div className="font-semibold">Pass Points:</div>
                 </div>
                 <div className="flex flex-col gap-6 font-normal">
-                    <div>
-                        {currentDate}
-                    </div>
-                    <div>
-                        {gameDetails?.timeLimit}
-                    </div>
-                    <div>
-                        {gameDetails?.attempts}
-                    </div>
-                    <div>
-                        {gameDetails?.passingPoints} Points
-                    </div>
+                    <div>{currentDate}</div>
+                    <div>{gameDetails?.timeLimit}</div>
+                    <div>{gameDetails?.attempts}</div>
+                    <div>{gameDetails?.passingPoints} Points</div>
                 </div>
             </div>
             <div className="max-w-fit">
-                <Button style="font-extrabold bg-[#654B3E] px-12 py-4 rounded-md text-white" name="Start Game" />
+                <div
+                    onClick={gameName === "The Constitutional Hangman" ? handleStartGameClick : undefined}
+                >
+                    <Button
+                        style="font-extrabold bg-[#654B3E] px-12 py-4 rounded-md text-white"
+                        name="Start Game"
+                    />
+                </div>
             </div>
-        </div >
-    )
+        </div>
+    );
 }

@@ -9,25 +9,30 @@ const SideBarData = [
     {
         name: "Game",
         icon: <GameSvg />,
+        route: "/games", // Add a route property for the Game button
     },
     {
         name: "Notification",
         icon: <NotificationSvg />,
+        route: "/err", // Keep the existing route
     },
     {
         name: "Achievments",
         icon: <AchievmentSvg />,
+        route: "/err", // Default route for other buttons
     },
     {
         name: "Quiz History",
         icon: <QuizSvg />,
+        route: "/err", // Default route for other buttons
     },
 ];
 
 export default function SideBar() {
     const router = useRouter(); 
-    const handleNavigation = () => {
-        router.push("/err");  
+
+    const handleNavigation = (route: string) => {
+        router.push(route);  // Navigate to the provided route
     };
 
     return (
@@ -35,7 +40,7 @@ export default function SideBar() {
             {SideBarData.map((item, index) => (
                 <div 
                     key={index} 
-                    onClick={handleNavigation}
+                    onClick={() => handleNavigation(item.route)}  // Pass the route from the item
                     className="flex items-center gap-4 cursor-pointer text-[#696F79] font-medium hover:bg-[#cabfb9] p-3 rounded-lg"
                 >
                     <div>{item.icon}</div>

@@ -51,6 +51,24 @@ const GamesDetails = [
         gameName: "Cards of Knowledge",
         likes: "11K",
         bgColor: "#3C1186",
+    },
+    {
+        image: "gameimg3.avif",
+        gameName: "The Constitutional Monopoly",
+        likes: "17K",
+        bgColor: "#5B2932",
+    },
+    {
+        image: "gameimg2.avif",
+        gameName: "Cards of Knowledge",
+        likes: "11K",
+        bgColor: "#3C1186",
+    },
+    {
+        image: "gameimg3.avif",
+        gameName: "The Constitutional Monopoly",
+        likes: "17K",
+        bgColor: "#5B2932",
     }
 ];
 
@@ -63,7 +81,7 @@ function shuffleArray(array: { image: string; gameName: string; likes: string; b
     ];
 }
 
-export default function GamesComponent() {
+export default function GamesComponent2() {
     const [shuffledGames, setShuffledGames] = useState(GamesDetails);
     const [gameName, setGameName] = useRecoilState(GameNameAtom);
     const router = useRouter();
@@ -81,7 +99,7 @@ export default function GamesComponent() {
     };
 
     return (
-        <div className="max-h-[60vh] overflow-y-auto">
+        <div className="max-h-[85vh] overflow-y-auto">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {shuffledGames.map((item, index) => (
                     <div
