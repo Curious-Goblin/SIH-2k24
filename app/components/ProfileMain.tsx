@@ -20,8 +20,9 @@ function getRandomBrownColor() {
 }
 
 export default async function ProfileMain() {
-    const session = await getServerSession(authOptions);
-    const { name } = session?.user;
+    // const session = await getServerSession(authOptions);
+    // const { name } = session?.user || "Dummy User";
+    const name="Dummy User";
     const nameparts = name.split(" ");
     const initials = getInitials(name);
     const backgroundColor = getRandomBrownColor();
