@@ -8,6 +8,7 @@ import TextArea from "./textArea";
 import { emailAtom, nameAtom, passwordAtom } from "../atoms/userdetails";
 import { signIn } from "next-auth/react";
 import { z } from "zod";
+import { useRouter } from "next/navigation";
 
 const signUpSchema = z.object({
     name: z.string()
@@ -24,6 +25,11 @@ export default function SignUpComponent() {
     const [passwordState, setPasswordState] = useRecoilState(passwordAtom);
     const [errors, setErrors] = useState<{ name?: string, emailAddress?: string, password?: string }>({});
     const [authError, setAuthError] = useState<string | null>(null);  // To store backend errors
+    const router=useRouter()
+
+    const handleNavigation=()=>{
+        router.push('/auth/signin')
+    }
 
     const handleChange = (setState: React.Dispatch<React.SetStateAction<string>>) =>
         (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -116,6 +122,9 @@ export default function SignUpComponent() {
                 <div className="flex-grow border-t border-gray-300" />
             </div>
             <GoogleButton onClick={handleGoogleSignIn} text="Sign Up with Google" />
+            <div onClick={handleNavigation} className="text-md cursor-pointer underline text-[#654B3E] font-semibold flex justify-center pt-8">
+                Already have an account? Login
+            </div>
         </div>
     )
 }
