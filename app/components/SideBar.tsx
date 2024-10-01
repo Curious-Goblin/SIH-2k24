@@ -9,42 +9,42 @@ const SideBarData = [
     {
         name: "Game",
         icon: <GameSvg />,
-        route: "/games", // Add a route property for the Game button
+        route: "/games",
     },
     {
         name: "Notification",
         icon: <NotificationSvg />,
-        route: "/err", // Keep the existing route
+        route: "/err",
     },
     {
         name: "Achievments",
         icon: <AchievmentSvg />,
-        route: "/err", // Default route for other buttons
+        route: "/err",
     },
     {
         name: "Quiz History",
         icon: <QuizSvg />,
-        route: "/err", // Default route for other buttons
+        route: "/err",
     },
 ];
 
 export default function SideBar() {
-    const router = useRouter(); 
+    const router = useRouter();
 
     const handleNavigation = (route: string) => {
-        router.push(route);  // Navigate to the provided route
+        router.push(route);
     };
 
     return (
-        <div className="text-white p-5 flex flex-col gap-5">
+        <div className="text-white p-3 md:p-5 flex flex-col gap-3 md:gap-5">
             {SideBarData.map((item, index) => (
                 <div 
                     key={index} 
-                    onClick={() => handleNavigation(item.route)}  // Pass the route from the item
-                    className="flex items-center gap-4 cursor-pointer text-[#696F79] font-medium hover:bg-[#cabfb9] p-3 rounded-lg"
+                    onClick={() => handleNavigation(item.route)}
+                    className="flex items-center gap-3 md:gap-4 cursor-pointer text-[#696F79] font-medium hover:bg-[#cabfb9] p-2 md:p-3 rounded-lg"
                 >
                     <div>{item.icon}</div>
-                    <span>{item.name}</span>
+                    <span className="hidden lg:block">{item.name}</span>
                 </div>
             ))}
         </div>
