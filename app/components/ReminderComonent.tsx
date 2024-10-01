@@ -30,7 +30,7 @@ export default function ReminderComponent() {
     }
     return (
         <div className="mt-8">
-            <div className="font-bold text-[#654B3E] text-xl mb-10">
+            <div className="font-bold text-[#654B3E] text-md lg:text-lg xl:text-xl mb-5 lg:mb-7 xl:mb-10">
                 Reminders
             </div>
             <div>
@@ -38,10 +38,10 @@ export default function ReminderComponent() {
                     <div
                         key={index}
                         onClick={handleNavigation}
-                        className="flex items-center cursor-pointer gap-5 pb-5">
-                        <div className="w-14 h-14">{reminder.svg}</div>
+                        className="flex items-center cursor-pointer gap-2 lg:gap-5 pb-5">
+                        <div className="w-8 h-8 md:w-10 md:h-10 2xl:w-12 2xl:h-12">{reminder.svg}</div>
                         <div>
-                            <div>{reminder.name}</div>
+                            <div className="text-sm sm:text-md">{reminder.name}</div>
                             <div className="text-[#B3B6B6] text-xs">{reminder.subText}</div>
                         </div>
                     </div>

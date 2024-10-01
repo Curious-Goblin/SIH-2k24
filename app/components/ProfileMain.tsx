@@ -21,56 +21,55 @@ function getRandomBrownColor() {
 
 export default async function ProfileMain() {
     const session = await getServerSession(authOptions);
-    const { name } = session?.user || {name:"Dummy User"};
+    const { name } = session?.user || { name: "Dummy User" };
     const nameparts = name.split(" ");
     const initials = getInitials(name);
     const backgroundColor = getRandomBrownColor();
 
     return (
-        <div className="flex items-center">
+        <div className="flex flex-col md:flex-row items-center md:items-start md:space-x-10">
             <div
-                className="flex items-center justify-center rounded-lg w-48 h-48 text-white text-5xl font-bold"
+                className="flex items-center justify-center rounded-lg w-36 h-36 sm:w-48 sm:h-48 text-white text-4xl sm:text-5xl font-bold mb-6 md:mb-0"
                 style={{ backgroundColor }}
             >
-                {initials.toLocaleUpperCase()}
+                {initials.toUpperCase()}
             </div>
-
-            <div className="ml-10 flex-1">
-                <div className="flex flex-col mb-7">
-                    <div className="text-2xl text-[#654B3E] font-extrabold">
+            <div className="flex-1 text-center md:text-left">
+                <div className="flex flex-col mb-6">
+                    <div className="text-xl sm:text-2xl text-[#654B3E] font-extrabold">
                         {nameparts[0]}
                     </div>
                     <div className="text-sm text-[#696F79] font-medium">Bonus booster 24lv</div>
                 </div>
-                <div className="max-w-96 bg-gray-300 rounded-full h-2.5 mb-10">
+                <div className="max-w-full sm:max-w-96 bg-gray-300 rounded-full h-2.5 mb-6">
                     <div className="bg-[#654B3E] h-2.5 rounded-full" style={{ width: "60%" }}></div>
                 </div>
-                <div className="flex space-x-8 text-[#696F79]">
-                    <div className="flex gap-4">
-                        <div className="rounded-md shadow-lg px-2 py-2">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-[#696F79]">
+                    <div className="flex items-center gap-4">
+                        <div className="rounded-md shadow-lg p-2">
                             <FlagSvg />
                         </div>
                         <div className="flex flex-col">
-                            <div className="text-2xl font-extrabold">27</div>
+                            <div className="text-xl sm:text-2xl font-extrabold">27</div>
                             <div className="text-sm text-gray-500">Level Passed</div>
                         </div>
                     </div>
-                    <div className="flex gap-4">
-                        <div className="rounded-md shadow-lg px-2 py-2">
+                    <div className="flex items-center gap-4">
+                        <div className="rounded-md shadow-lg p-2">
                             <TimeSvg />
                         </div>
                         <div className="flex flex-col">
-                            <div className="text-2xl font-extrabold ">15min</div>
+                            <div className="text-xl sm:text-2xl font-extrabold">15min</div>
                             <div className="text-sm text-gray-500">Fastest Time</div>
                         </div>
                     </div>
-                    <div className="flex gap-4">
-                        <div className="rounded-md shadow-lg px-2 py-2">
+                    <div className="flex items-center gap-4">
+                        <div className="rounded-md shadow-lg p-2">
                             <TickSvg />
                         </div>
                         <div className="flex flex-col">
-                            <div className="text-2xl font-extrabold">140</div>
-                            <div className="text-sm text-gray-500">Chapter's Completed</div>
+                            <div className="text-xl sm:text-2xl font-extrabold">140</div>
+                            <div className="text-sm text-gray-500">Chapters Completed</div>
                         </div>
                     </div>
                 </div>
