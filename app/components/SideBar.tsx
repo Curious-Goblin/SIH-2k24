@@ -36,7 +36,7 @@ export default function SideBar() {
     };
 
     return (
-        <div className="text-white p-3 md:p-5 flex flex-col gap-3 md:gap-5">
+        <div className="text-white p-3 pb-0 md:p-5 flex flex-col gap-3">
             {SideBarData.map((item, index) => (
                 <div 
                     key={index} 

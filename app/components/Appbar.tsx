@@ -5,7 +5,7 @@ import SearchBarComponent from "./SearchBarComponent";
 
 export default function Appbar() {
     return (
-        <div className="flex flex-wrap md:flex-nowrap items-center gap-6 w-full p-4 pt-3">
+        <div className="flex flex-wrap md:flex-nowrap items-center gap-6 w-full p-4 pb-0 pt-0">
             <div className="w-40 h-16 md:w-60 md:h-20">
                 <LogoSvgDashboard />
             </div>

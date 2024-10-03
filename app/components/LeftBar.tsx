@@ -16,11 +16,11 @@ export default function LeftBar() {
     };
 
     return (
-        <div className="flex flex-col justify-between pb-4 md:w-[13.5%] w-full">
+        <div className="flex flex-col justify-between md:w-[13.5%]">
             <div>
                 <div 
                     onClick={handleNavigationD} 
-                    className="rounded-lg bg-[#654B3E] mx-4 text-white text-lg font-bold flex justify-around my-3 py-4 px-4 md:px-9 cursor-pointer"
+                    className="rounded-lg bg-[#654B3E] mx-4 text-white text-lg font-bold flex justify-around mt-3 py-4 px-4 cursor-pointer"
                 >
                     <DashboardSvg />
                     <button className="hidden lg:block">Dashboard</button>
@@ -28,7 +28,7 @@ export default function LeftBar() {
                 <SideBar />
             </div>
 
-            <div>
+            <div className="mb-4">
                 <Image
                     src="/Support.png"
                     layout="responsive"
