@@ -21,7 +21,11 @@ export function Keyboard({
           <button
             key={option}
             onClick={() => addGuessedOption(option)}
-            className={`text-2xl uppercase p-2 font-bold border-2 m-0.5 ${isGuessed ? 'bg-gray-300 cursor-not-allowed text-gray-300 border-gray-300' : 'text-black border-black hover:bg-[hsl(200,100%,75%)]'}`}
+            className={
+              `text-2xl uppercase p-2 font-bold border-2 m-0.5 
+              ${isGuessed ? 'bg-gray-300 cursor-not-allowed text-gray-300 border-gray-300'
+                : 'text-black border-black hover:bg-[hsl(200,100%,75%)]'}`
+            }
             disabled={isGuessed || disabled}
           >
             {option}

@@ -86,11 +86,10 @@ export default function GameDetails() {
                 </div>
             </div>
             <div className="max-w-fit">
-                <div
-                    onClick={gameName === "The Constitutional Hangman" ? handleStartGameClick : undefined}
-                >
+                <div>
                     <Button
-                        style="font-extrabold bg-[#654B3E] px-12 py-4 rounded-md text-white"
+                        onClick={gameName === "The Constitutional Hangman" ? handleStartGameClick : undefined}
+                        style="font-extrabold cursor-pointer bg-[#654B3E] px-12 py-4 rounded-md text-white"
                         name="Start Game"
                     />
                 </div>
