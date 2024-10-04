@@ -69,11 +69,16 @@ const SubmitAnswer: React.FC<Props> = ({
 };
 
 function HangmanGame() {
-  const [questionDetails, setQuestionDetails] = useState({
+  const [questionDetails, setQuestionDetails] = useState<{
+    question: string;
+    answers: string[];
+    options: string[];
+  }>({
     question: "",
     answers: [],
     options: [],
   });
+  
   const [questionToGuess, setQuestionToGuess] = useState<string>("");
   const [guessedOptions, setGuessedOptions] = useRecoilState(guessedOptionsState);
   const [Options, setOptions] = useState<string[]>([]);
