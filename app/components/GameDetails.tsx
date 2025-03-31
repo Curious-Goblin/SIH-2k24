@@ -7,7 +7,7 @@ import Button from "./button";
 const GamesDetails = [
     {
         image: "gameimg1.avif",
-        gameName: "The Constitutional Hangman",
+        gameName: "The Hangman",
         title: "Master the Indian Constitution Hangman Game",
         description: "Test your knowledge of the Indian Constitution by guessing terms in this fun and interactive hangman game.",
         likes: "15K",
@@ -29,7 +29,7 @@ const GamesDetails = [
     },
     {
         image: "gameimg3.avif",
-        gameName: "The Constitutional Monopoly",
+        gameName: "The Monopoly",
         title: "Play Monopoly with Indian Constitutional Amendments",
         description: "Explore Indian constitutional amendments as you navigate through the board in this engaging Monopoly-style game.",
         likes: "17K",
@@ -64,8 +64,11 @@ export default function GameDetails() {
     const gameDetails = GamesDetails.find((game) => game.gameName === gameName);
 
     const handleStartGameClick = () => {
-        if (gameName === "The Constitutional Hangman") {
+        if (gameName === "The Hangman") {
             router.push("/hangmanGame");
+        }
+        else if(gameName === "The Monopoly"){
+            router.push("https://anujbag012.github.io/MONOPOLY/")
         }
     };
 
@@ -88,7 +91,7 @@ export default function GameDetails() {
             <div className="max-w-fit">
                 <div>
                     <Button
-                        onClick={gameName === "The Constitutional Hangman" ? handleStartGameClick : undefined}
+                        onClick={(gameName === "The Hangman" || gameName === "The Monopoly") ? handleStartGameClick : undefined}
                         style="font-extrabold cursor-pointer bg-[#654B3E] px-12 py-4 rounded-md text-white"
                         name="Start Game"
                     />

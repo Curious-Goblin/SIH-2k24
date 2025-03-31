@@ -10,9 +10,9 @@ import LikeSvg from "@/app/svg/LikeSvg";
 const GamesDetails = [
     {
         image: "gameimg1.avif",
-        gameName: "The Constitutional Hangman",
-        title: "Master the Indian Constitution Hangman Game",
-        description: "In 'The Constitutional Hangman,' players will be tested on their knowledge of the Indian Constitution by guessing key terms related to constitutional law and governance. As the game progresses, each incorrect guess brings you closer to losing the game, while each correct guess uncovers crucial terms that are fundamental to understanding the Constitution. This interactive hangman game is a fun way to sharpen your knowledge while testing how well you remember important legal terms and concepts.",
+        gameName: "The Hangman",
+        title: "Master the Constitution Hangman Game",
+        description: "In 'The Constitutional Hangman,' players will be tested on their knowledge of the Constitution by guessing key terms related to constitutional law and governance. As the game progresses, each incorrect guess brings you closer to losing the game, while each correct guess uncovers crucial terms that are fundamental to understanding the Constitution. This interactive hangman game is a fun way to sharpen your knowledge while testing how well you remember important legal terms and concepts.",
         likes: "15k",
         bgColor: "#942539",
         passingPoints: 50,
@@ -22,7 +22,7 @@ const GamesDetails = [
     {
         image: "gameimg2.avif",
         gameName: "Cards of Knowledge",
-        title: "Learn Indian Laws with Cards of Knowledge",
+        title: "Learn Laws with Cards of Knowledge",
         description: "In 'Cards of Knowledge,' the challenge lies in picking the correct cards that represent key aspects of Indian laws, acts, and amendments. As you progress, you'll be presented with cards that test your understanding of legal provisions, historical amendments, and landmark acts that shaped the nation's legislative framework. This card-based learning game is an engaging way to deepen your understanding of India's legal system, encouraging you to choose wisely as you learn more with every card.",
         likes: "11k",
         bgColor: "#3C1186",
@@ -32,9 +32,9 @@ const GamesDetails = [
     },
     {
         image: "gameimg3.avif",
-        gameName: "The Constitutional Monopoly",
-        title: "Play Monopoly with Indian Constitutional Amendments",
-        description: "In 'The Constitutional Monopoly,' players traverse the board while learning about various Indian constitutional amendments. Each move presents you with a new challenge or opportunity to learn about significant changes in India's governance and legal framework. As you navigate through the game, you'll not only build your knowledge of constitutional history but also make strategic decisions that impact your progress. This Monopoly-style game offers a dynamic and engaging way to explore the Constitution in a fun, board game format.",
+        gameName: "The Monopoly",
+        title: "Play Monopoly with Science, Moral Science and Global History",
+        description: "In 'The Monopoly,' players traverse the board while learning about various things. Each move presents you with a new challenge or opportunity to learn about fundamental things of the subjects. As you navigate through the game, you'll not only build your knowledge of but also make strategic decisions that impact your progress. This Monopoly-style game offers a dynamic and engaging way to explore the different fields in a fun, board game format.",
         likes: "17k",
         bgColor: "#5B2932",
         passingPoints: 70,
