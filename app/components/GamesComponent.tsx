@@ -18,7 +18,7 @@ function hexToRgba(hex: string, opacity: number) {
 const GamesDetails = [
     {
         image: "gameimg1.avif",
-        gameName: "The Constitutional Hangman",
+        gameName: "The Hangman",
         likes: "15K",
         bgColor: "#942539",
     },
@@ -30,35 +30,35 @@ const GamesDetails = [
     },
     {
         image: "gameimg3.avif",
-        gameName: "The Constitutional Monopoly",
+        gameName: "The Monopoly",
         likes: "17K",
         bgColor: "#5B2932",
     },
-    {
-        image: "gameimg2.avif",
-        gameName: "Cards of Knowledge",
-        likes: "11K",
-        bgColor: "#3C1186",
-    },
-    {
-        image: "gameimg3.avif",
-        gameName: "The Constitutional Monopoly",
-        likes: "17K",
-        bgColor: "#5B2932",
-    },
-    {
-        image: "gameimg2.avif",
-        gameName: "Cards of Knowledge",
-        likes: "11K",
-        bgColor: "#3C1186",
-    }
+    // {
+    //     image: "gameimg2.avif",
+    //     gameName: "Cards of Knowledge",
+    //     likes: "11K",
+    //     bgColor: "#3C1186",
+    // },
+    // // {
+    // //     image: "gameimg3.avif",
+    // //     gameName: "The Constitutional Monopoly",
+    // //     likes: "17K",
+    // //     bgColor: "#5B2932",
+    // // },
+    // {
+    //     image: "gameimg2.avif",
+    //     gameName: "Cards of Knowledge",
+    //     likes: "11K",
+    //     bgColor: "#3C1186",
+    // }
 ];
 
 function shuffleArray(array: { image: string; gameName: string; likes: string; bgColor: string }[]) {
-    const nonHangmanGames = array.filter(game => game.gameName !== "The Constitutional Hangman");
+    const nonHangmanGames = array.filter(game => game.gameName !== "The Hangman");
     const shuffledNonHangmanGames = nonHangmanGames.sort(() => Math.random() - 0.5);
     return [
-        array.find(game => game.gameName === "The Constitutional Hangman")!,
+        array.find(game => game.gameName === "The Hangman")!,
         ...shuffledNonHangmanGames
     ];
 }
@@ -79,6 +79,9 @@ export default function GamesComponent() {
         setGameName(name);
         router.push("/game-tutorial");
     };
+    const handleRedirect = () => {
+        window.location.href = "https://example.com";
+      };
 
     return (
         <div className="max-h-[60vh] overflow-y-auto">
@@ -87,16 +90,16 @@ export default function GamesComponent() {
                     <div
                         key={index}
                         className={`relative h-80 w-full rounded-lg shadow-lg overflow-hidden ${
-                            item.gameName !== "The Constitutional Hangman" ? "cursor-default" : "cursor-pointer"
+                            item.gameName !== "The Hangman" ? "cursor-default" : "cursor-pointer"
                         }`}
                         style={{
                             backgroundImage: `url(${item.image})`,
                             backgroundSize: "cover",
                             backgroundPosition: "center",
                         }}
-                        onClick={() => item.gameName === "The Constitutional Hangman" && handleCardClick(item.gameName)}
+                        onClick={() => (item.gameName === "The Hangman" || item.gameName === "The Monopoly") && handleCardClick(item.gameName)}
                     >
-                        {item.gameName !== "The Constitutional Hangman" && (
+                        {item.gameName !== "The Hangman" && item.gameName !== "The Monopoly"  && (
                             <div className="absolute inset-0 bg-black bg-opacity-75 flex justify-center items-center">
                                 <LockSvg />
                             </div>

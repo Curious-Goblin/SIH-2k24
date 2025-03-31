@@ -10,6 +10,7 @@ export default function Dashboard() {
         <div>View all</div>
       </div>
       <GamesComponent />
+      
     </div>
   );
 }
